@@ -1,0 +1,90 @@
+/**
+ * THE OUTFIT CLUB — ACTIVE FILTER CHIPS STYLING
+ */
+
+.active-filters-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  width: 100%;
+}
+
+.active-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-ivory-surface);
+  border: 1px solid var(--border-default);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-charcoal);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.filter-chip-label {
+  color: var(--color-warm-gray);
+  text-transform: capitalize;
+}
+
+.filter-chip-value {
+  font-weight: 600;
+  color: var(--color-charcoal);
+  text-transform: capitalize;
+}
+
+.filter-chip-remove {
+  background: none;
+  border: none;
+  color: var(--color-warm-gray);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast);
+}
+
+.filter-chip-remove:hover {
+  color: var(--color-cognac);
+}
+
+.clear-all-btn {
+  background: none;
+  border: none;
+  color: var(--color-cognac);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.clear-all-btn:hover {
+  color: var(--color-cognac-hover);
+  text-decoration: underline;
+}
+
+.result-count-indicator {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}

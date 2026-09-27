@@ -1,0 +1,186 @@
+/* ============================================================
+   THE OUTFIT CLUB — ROYAL GOLD BRAND LOGO STYLES
+   Royal + Majestic + Modern Luxury Masculine Streetwear
+   ============================================================ */
+
+.toc-brand-logo-root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.toc-brand-logo-root:hover {
+  transform: translateY(-1px);
+}
+
+.toc-brand-logo-root:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* Sizing Scale for Emblem */
+.toc-emblem-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  background-color: #0A0A0C;
+}
+
+.toc-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.toc-brand-logo-root:hover .toc-emblem-img {
+  transform: scale(1.06);
+}
+
+.toc-emblem-svg-fallback {
+  width: 100%;
+  height: 100%;
+}
+
+/* Size Variants */
+.size-sm .toc-emblem-wrapper {
+  width: 32px;
+  height: 32px;
+}
+.size-sm .toc-main-brand-title {
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+}
+.size-sm .toc-brand-subheading {
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+}
+
+.size-md .toc-emblem-wrapper {
+  width: 44px;
+  height: 44px;
+}
+.size-md .toc-main-brand-title {
+  font-size: 1.25rem;
+  letter-spacing: 0.18em;
+}
+.size-md .toc-brand-subheading {
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+}
+
+.size-lg .toc-emblem-wrapper {
+  width: 64px;
+  height: 64px;
+}
+.size-lg .toc-main-brand-title {
+  font-size: 1.75rem;
+  letter-spacing: 0.2em;
+}
+.size-lg .toc-brand-subheading {
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+}
+
+.size-xl .toc-emblem-wrapper {
+  width: 96px;
+  height: 96px;
+}
+.size-xl .toc-main-brand-title {
+  font-size: 2.25rem;
+  letter-spacing: 0.24em;
+}
+.size-xl .toc-brand-subheading {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+}
+
+/* Wordmark Styling */
+.toc-wordmark-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.toc-main-brand-title {
+  font-family: var(--font-serif, 'Cinzel', serif);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: var(--color-charcoal, #171717);
+}
+
+/* Metallic Rich Brand Shimmer */
+.gold-shimmer-text {
+  background: linear-gradient(135deg, #171717 0%, #683e20 28%, #a66a45 52%, #7c4826 76%, #171717 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--color-charcoal, #171717);
+  display: inline-block;
+}
+
+.toc-brand-subheading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 6px);
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-warm-gray, #6F6961);
+  line-height: 1;
+}
+
+.gold-divider-dot {
+  color: var(--color-cognac, #A66A45);
+  font-size: 0.5em;
+  opacity: 0.85;
+}
+
+.subheading-text {
+  letter-spacing: inherit;
+}
+
+/* Subtle Gold Back Glow */
+.has-gold-glow .toc-emblem-wrapper {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+/* Background Brand Watermark */
+.toc-brand-watermark {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  filter: grayscale(20%) brightness(1.2);
+  transition: opacity 0.5s ease;
+}
+
+.watermark-emblem-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toc-brand-logo-root,
+  .toc-emblem-img {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,86 @@
+/* ============================================================
+   THE OUTFIT CLUB — SHOP THE LOOK SECTION STYLING
+   Editorial visual merchandising showcase on the Homepage
+   ============================================================ */
+
+.shop-the-look-section {
+  padding-top: var(--space-16, 64px);
+  padding-bottom: var(--space-16, 64px);
+}
+
+.shop-the-look-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-8, 32px);
+  gap: var(--space-4, 16px);
+  flex-wrap: wrap;
+}
+
+.shop-the-look-headings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 4px);
+  max-width: 680px;
+}
+
+.shop-the-look-title {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal, #171717);
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.shop-the-look-subtitle {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #737373);
+  margin-top: var(--space-2, 8px);
+  line-height: 1.6;
+}
+
+.shop-the-look-view-all-btn {
+  background: transparent;
+  border: 1px solid var(--color-border-subtle, #e5e5e0);
+  border-radius: 2px;
+  padding: 8px 16px;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-charcoal, #171717);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.shop-the-look-view-all-btn:hover {
+  background-color: var(--color-charcoal, #171717);
+  color: #ffffff;
+  border-color: var(--color-charcoal, #171717);
+}
+
+.shop-the-look-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6, 24px);
+}
+
+@media (min-width: 640px) {
+  .shop-the-look-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .shop-the-look-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

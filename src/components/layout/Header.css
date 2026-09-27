@@ -1,0 +1,329 @@
+/* ============================================================
+   THE OUTFIT CLUB — HEADER  |  WARM IVORY LIGHT THEME
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: rgba(245, 241, 232, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-warm-border);
+  box-shadow: 0 2px 16px rgba(23, 23, 23, 0.06);
+  transition: all var(--transition-normal);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height, 80px);
+  gap: var(--space-4);
+}
+
+/* Brand Logo Container */
+.header-logo-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Desktop Nav Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5, 20px);
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  letter-spacing: 0.1em;
+  transition: color 200ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-link:hover {
+  color: var(--color-cognac);
+}
+
+/* Cognac animated underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-cognac);
+  transition: width 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link-badge {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  padding: 0.12rem 0.4rem;
+  border-radius: var(--radius-xs);
+  background: rgba(166, 106, 69, 0.12);
+  color: var(--color-cognac);
+  border: 1px solid rgba(166, 106, 69, 0.30);
+}
+
+/* Header Action Utilities */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--color-charcoal);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.icon-button:hover {
+  color: var(--color-cognac);
+  background-color: var(--color-cognac-light);
+}
+
+.icon-button:focus-visible {
+  outline: 2px solid var(--color-cognac);
+  outline-offset: 2px;
+}
+
+/* Voice search listening state */
+.voice-search-btn.listening {
+  color: var(--color-cognac);
+  background-color: var(--color-cognac-muted);
+}
+
+.listening-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-cognac);
+  animation: voicePulse 1.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes voicePulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.action-count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--color-cognac);
+  color: #FFFFFF;
+  font-size: 0.625rem;
+  font-weight: 800;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 3px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(166, 106, 69, 0.3);
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-toggle {
+  display: none;
+}
+
+/* Mobile Drawer */
+.mobile-drawer-backdrop {
+  display: none;
+}
+
+.mobile-drawer {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .mobile-drawer-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(23, 23, 23, 0.50);
+    backdrop-filter: blur(4px);
+    z-index: var(--z-drawer);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+  }
+
+  .mobile-drawer-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    background-color: var(--color-ivory-surface);
+    z-index: calc(var(--z-drawer) + 1);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    box-shadow: -8px 0 32px rgba(23, 23, 23, 0.12);
+    border-left: 1px solid var(--color-warm-border);
+  }
+
+  .mobile-drawer.active {
+    transform: translateX(0);
+  }
+
+  .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-warm-border);
+    margin-bottom: var(--space-6);
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .mobile-nav-link {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover {
+    color: var(--color-cognac);
+    padding-left: var(--space-2);
+  }
+}
+
+/* Header Slide-Down Search Bar */
+.header-search-bar-wrap {
+  width: 100%;
+  background-color: var(--color-ivory-surface);
+  border-top: 1px solid var(--color-warm-border);
+  border-bottom: 1px solid var(--color-warm-border);
+  padding: var(--space-3) 0;
+  box-shadow: 0 8px 24px rgba(23, 23, 23, 0.08);
+  animation: slideDownSearch 0.2s ease-out;
+}
+
+@keyframes slideDownSearch {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-search-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.header-search-inner .smart-search-container {
+  flex: 1;
+}
+
+.header-search-close-btn {
+  color: var(--color-warm-gray);
+  flex-shrink: 0;
+}
+
+.header-search-close-btn:hover {
+  color: var(--color-cognac);
+}
+
+/* Account button — logged-in state shows first name */
+.header-account-btn {
+  gap: 5px;
+}
+
+.header-account-btn.is-logged-in {
+  color: var(--color-cognac);
+}
+
+.header-account-name {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: inherit;
+  max-width: 72px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+  .header-account-name {
+    display: none;
+  }
+}

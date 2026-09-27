@@ -1,0 +1,163 @@
+/**
+ * THE OUTFIT CLUB — DESIGN SYSTEM TOKENS
+ * Brand aesthetic: Warm Ivory + Deep Charcoal + Cognac Accent
+ * Background is quiet. Products attract attention.
+ */
+
+:root {
+  /* Brand Typography */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-display: 'Outfit', 'Cinzel', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md: 1.125rem;    /* 18px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 1.875rem;   /* 30px */
+  --text-3xl: 2.25rem;    /* 36px */
+  --text-4xl: 3rem;       /* 48px */
+  --text-5xl: 3.75rem;    /* 60px */
+  --text-6xl: 4.5rem;     /* 72px */
+
+  /* ── WARM IVORY PALETTE ───────────────────────────────────────── */
+
+  /* Primary Background System */
+  --color-ivory-bg:      #F5F1E8;   /* Main page background */
+  --color-ivory-surface: #FBF9F4;   /* Card / elevated surface */
+  --color-ivory-deep:    #EDE8DC;   /* Subtle section tint */
+  --color-ivory:         #F5F1E8;   /* Compat alias → bg */
+
+  /* Text Hierarchy */
+  --color-charcoal:       #171717;   /* Primary text */
+  --color-charcoal-light: #2E2E2E;   /* Sub-headings */
+  --color-graphite:       #4A4543;   /* Body text */
+  --color-warm-gray:      #6F6961;   /* Secondary text */
+  --color-warm-gray-light:#8C867E;   /* Muted / placeholder */
+  --color-warm-gray-subtle:#A8A29E;  /* Very muted */
+
+  /* Border System */
+  --color-warm-border:         #DDD6CA;           /* Default border */
+  --color-warm-border-subtle:  rgba(23,23,23,0.08); /* Hairline */
+
+  /* Cognac Accent */
+  --color-cognac:        #A66A45;
+  --color-cognac-hover:  #8E5637;
+  --color-cognac-light:  rgba(166, 106, 69, 0.10);
+  --color-cognac-muted:  rgba(166, 106, 69, 0.15);
+  --color-cognac-border: rgba(166, 106, 69, 0.35);
+  --color-cognac-glow:   rgba(166, 106, 69, 0.20);
+
+  /* Gold (used sparingly for brand elements only: logo, emblem) */
+  --color-gold:          #C9A84C;
+  --color-gold-light:    #E8C97A;
+  --color-gold-pale:     #F5E4A8;
+  --color-gold-dark:     #9C7B2E;
+  --color-gold-deep:     #7A5810;
+  --color-gold-gradient: linear-gradient(135deg, #F5E4A8 0%, #C9A84C 45%, #9C7B2E 100%);
+  --color-gold-metallic: linear-gradient(90deg, #C9A84C 0%, #E8C97A 50%, #9C7B2E 100%);
+  --color-gold-glow:     rgba(201, 168, 76, 0.20);
+  --color-gold-border:   rgba(201, 168, 76, 0.30);
+
+  /* Neutral Scale (Light-Mode Mapped) */
+  --color-neutral-900: #171717;
+  --color-neutral-800: #2E2E2E;
+  --color-neutral-700: #4A4543;
+  --color-neutral-600: #6F6961;
+  --color-neutral-500: #8C867E;
+  --color-neutral-400: #A8A29E;
+  --color-neutral-300: #C5BEB7;
+  --color-neutral-200: #DDD6CA;
+  --color-neutral-100: #EDE8DC;
+  --color-neutral-50:  #F5F1E8;
+
+  /* Black / White Pure */
+  --color-black:      #171717;
+  --color-black-pure: #000000;
+  --color-white:      #FFFFFF;
+  --color-white-pure: #FFFFFF;
+
+  /* ── SEMANTIC MAPPINGS ───────────────────────────────────────── */
+
+  /* Background */
+  --bg-primary:           #F5F1E8;   /* Page background */
+  --bg-secondary:         #EDE8DC;   /* Alternate section */
+  --bg-tertiary:          #DDD6CA;   /* Divider/rule areas */
+  --bg-surface:           #FBF9F4;   /* Cards, panels */
+  --bg-surface-elevated:  #FFFFFF;   /* Dropdowns, modals */
+  --bg-inverse:           #171717;   /* Dark overlays */
+
+  /* Text */
+  --text-primary:   #171717;
+  --text-secondary: #4A4543;
+  --text-muted:     #6F6961;
+  --text-inverse:   #F5F1E8;
+  --text-gold:      #C9A84C;
+
+  /* Borders */
+  --border-subtle:  rgba(23, 23, 23, 0.08);
+  --border-default: #DDD6CA;
+  --border-strong:  #A66A45;
+
+  /* Accent aliases */
+  --color-accent-primary: #A66A45;
+  --color-accent-hover:   #8E5637;
+  --color-accent-light:   rgba(166, 106, 69, 0.10);
+  --color-accent-muted:   rgba(166, 106, 69, 0.15);
+
+  /* Obsidian (kept for footer + announcement bar only) */
+  --color-obsidian:       #111111;
+  --color-charcoal-dark:  #1A1A1A;
+
+  /* ── SPACING ─────────────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ── LAYOUT ──────────────────────────────────────────────────── */
+  --container-max: 1360px;
+  --container-narrow: 1040px;
+  --header-height: 80px;
+  --topbar-height: 38px;
+
+  /* ── RADII ───────────────────────────────────────────────────── */
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  /* ── SHADOWS ─────────────────────────────────────────────────── */
+  --shadow-sm:       0 1px 4px rgba(23, 23, 23, 0.08);
+  --shadow-md:       0 4px 16px rgba(23, 23, 23, 0.10);
+  --shadow-lg:       0 12px 32px rgba(23, 23, 23, 0.12);
+  --shadow-gold:     0 0 16px rgba(201, 168, 76, 0.18);
+  --shadow-dropdown: 0 8px 32px rgba(23, 23, 23, 0.14);
+
+  /* ── TRANSITIONS ─────────────────────────────────────────────── */
+  --transition-fast:   150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow:   400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── Z-INDEX ─────────────────────────────────────────────────── */
+  --z-base:   1;
+  --z-sticky: 100;
+  --z-header: 500;
+  --z-drawer: 900;
+  --z-modal:  1000;
+  --z-toast:  1100;
+}

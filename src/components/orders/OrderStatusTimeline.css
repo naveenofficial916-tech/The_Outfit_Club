@@ -1,0 +1,183 @@
+/* OrderStatusTimeline.css */
+
+.order-timeline-wrapper {
+  background-color: #faf9f7;
+  border: 1px solid #e7e4dc;
+  border-radius: 4px;
+  padding: 24px 20px;
+  margin: 24px 0;
+}
+
+.timeline-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline-steps-list {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+.timeline-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .timeline-step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+  }
+}
+
+.step-marker-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .step-marker-wrap {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.step-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #d4d4d4;
+  background-color: #ffffff;
+  color: #737373;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.timeline-step.is-completed .step-marker {
+  background-color: #171717;
+  border-color: #171717;
+  color: #ffffff;
+}
+
+.timeline-step.is-current .step-marker {
+  background-color: #171717;
+  border-color: #171717;
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(23, 23, 23, 0.15);
+}
+
+.timeline-step.is-upcoming .step-marker {
+  background-color: #faf9f7;
+  border-color: #e5e5e5;
+  color: #a3a3a3;
+}
+
+.step-line {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .step-line {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #e5e5e5;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+
+  .step-line.is-line-active {
+    background-color: #171717;
+  }
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-name {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #737373;
+  text-transform: uppercase;
+}
+
+.timeline-step.is-current .step-name {
+  color: #171717;
+  font-weight: 700;
+}
+
+.timeline-step.is-completed .step-name {
+  color: #171717;
+}
+
+.step-state-tag {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.68rem;
+  color: #a3a3a3;
+  letter-spacing: 0.02em;
+}
+
+.timeline-step.is-current .step-state-tag {
+  color: #8f2d14;
+  font-weight: 600;
+}
+
+/* Cancelled Banner */
+.order-cancelled-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  padding: 16px 20px;
+  border-radius: 4px;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.88rem;
+  color: #991b1b;
+}
+
+.cancelled-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #dc2626;
+  flex-shrink: 0;
+}
+
+.order-cancelled-banner strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+}
+
+.order-cancelled-banner p {
+  margin: 0;
+  color: #7f1d1d;
+}

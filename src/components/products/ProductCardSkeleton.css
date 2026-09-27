@@ -1,0 +1,80 @@
+/**
+ * Shimmer Loading Skeleton for ProductCard
+ */
+
+.product-card-skeleton {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.skeleton-pulse {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-100) 25%,
+    var(--color-neutral-200) 37%,
+    var(--color-neutral-100) 63%
+  );
+  background-size: 400% 100%;
+  animation: skeletonShimmer 1.5s ease infinite;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.skeleton-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-body {
+  padding-top: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeleton-meta {
+  width: 40%;
+  height: 10px;
+  border-radius: var(--radius-xs);
+}
+
+.skeleton-title {
+  width: 85%;
+  height: 14px;
+  border-radius: var(--radius-xs);
+}
+
+.skeleton-title-sub {
+  width: 60%;
+  height: 14px;
+  border-radius: var(--radius-xs);
+}
+
+.skeleton-swatches {
+  display: flex;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.skeleton-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.skeleton-price {
+  width: 30%;
+  height: 14px;
+  border-radius: var(--radius-xs);
+  margin-top: 2px;
+}

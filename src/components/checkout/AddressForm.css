@@ -1,0 +1,90 @@
+/* AddressForm.css */
+
+.address-form-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.address-form-legend {
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #171717;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e7e4dc;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #262626;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.required-star {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+.optional-tag {
+  color: #737373;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.form-input,
+.form-select {
+  background-color: #ffffff;
+  border: 1.5px solid #d4d4d4;
+  border-radius: 3px;
+  padding: 12px 14px;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.92rem;
+  color: #171717;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #171717;
+  box-shadow: 0 0 0 3px rgba(23, 23, 23, 0.08);
+}
+
+.form-input.is-invalid {
+  border-color: #dc2626;
+  background-color: #fef2f2;
+}
+
+.form-error {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.78rem;
+  color: #dc2626;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .form-row-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}

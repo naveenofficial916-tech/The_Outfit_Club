@@ -1,0 +1,103 @@
+.toc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* Sizes */
+.toc-btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: var(--text-xs);
+  border-radius: var(--radius-xs);
+  gap: 0.35rem;
+}
+
+.toc-btn-md {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-sm);
+  gap: 0.5rem;
+}
+
+.toc-btn-lg {
+  padding: 1rem 2.25rem;
+  font-size: var(--text-base);
+  border-radius: var(--radius-sm);
+  gap: 0.65rem;
+}
+
+/* Variants per Task 13 Button System */
+.toc-btn-primary,
+.toc-btn-accent {
+  background-color: var(--color-cognac);
+  color: var(--color-ivory);
+  border-color: var(--color-cognac);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(154, 104, 72, 0.18);
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toc-btn-primary:hover,
+.toc-btn-accent:hover {
+  background-color: var(--color-charcoal);
+  color: var(--color-ivory);
+  border-color: var(--color-charcoal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(23, 23, 23, 0.16);
+}
+
+.toc-btn-secondary {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border-color: var(--color-charcoal);
+  font-weight: 500;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toc-btn-secondary:hover {
+  border-color: var(--color-cognac);
+  color: var(--color-cognac);
+  background-color: var(--color-cognac-light);
+  transform: translateY(-1px);
+}
+
+.toc-btn-ghost {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  position: relative;
+  transition: color 250ms ease;
+}
+
+.toc-btn-ghost:hover {
+  color: var(--color-cognac);
+}
+
+.toc-btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 1.5px;
+  background-color: var(--color-cognac);
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toc-btn-ghost:hover::after {
+  transform: scaleX(1);
+}
+
+.toc-btn-full {
+  width: 100%;
+}

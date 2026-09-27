@@ -1,0 +1,160 @@
+/**
+ * THE OUTFIT CLUB — FEATURED COLLECTIONS SHOWCASE
+ * Streetwear collection cards with hover zoom and typography.
+ */
+
+.featured-collections-section {
+  padding: var(--space-16) var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.featured-collections-subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-warm-gray);
+  max-width: 600px;
+  line-height: 1.5;
+  margin-top: calc(-1 * var(--space-2));
+  margin-bottom: var(--space-8);
+}
+
+.featured-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.featured-collection-card {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--color-charcoal);
+  cursor: pointer;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-normal);
+}
+
+.featured-collection-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.collection-card-img-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.collection-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-collection-card:hover .collection-card-img {
+  transform: scale(1.06);
+}
+
+.collection-card-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(18, 19, 22, 0.95) 0%,
+    rgba(18, 19, 22, 0.55) 50%,
+    rgba(18, 19, 22, 0.15) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.featured-collection-card:hover .collection-card-scrim {
+  background: linear-gradient(
+    to top,
+    rgba(18, 19, 22, 0.98) 0%,
+    rgba(18, 19, 22, 0.6) 50%,
+    rgba(18, 19, 22, 0.25) 100%
+  );
+}
+
+.collection-card-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 3;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem;
+  background-color: rgba(18, 19, 22, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.collection-card-overlay-body {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: #ffffff;
+}
+
+.collection-card-title {
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.15;
+}
+
+.collection-card-tagline {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.collection-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-cognac);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: var(--space-2);
+  transition: transform var(--transition-fast);
+}
+
+.featured-collection-card:hover .collection-card-cta {
+  transform: translateX(4px);
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .featured-collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-collections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-collection-card {
+    min-height: 320px;
+  }
+}

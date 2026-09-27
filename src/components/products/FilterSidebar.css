@@ -1,0 +1,336 @@
+/**
+ * THE OUTFIT CLUB — FILTER SIDEBAR STYLING
+ * Editorial aesthetic, clean collapsible accordion sections, custom inputs.
+ */
+
+.filter-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: transparent;
+}
+
+.filter-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+  margin-bottom: var(--space-2);
+}
+
+.filter-sidebar-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.filter-active-count {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  background-color: var(--color-cognac);
+  color: var(--color-ivory);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+}
+
+.filter-reset-action {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-cognac);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.filter-reset-action:hover:not(:disabled) {
+  color: var(--color-cognac-hover);
+  text-decoration: underline;
+}
+
+.filter-reset-action:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  text-decoration: none;
+  color: var(--color-warm-gray);
+}
+
+/* Accordion Group */
+.filter-accordion-group {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.filter-accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-charcoal);
+  text-align: left;
+  transition: color var(--transition-fast);
+}
+
+.filter-accordion-header:hover {
+  color: var(--color-cognac);
+}
+
+.filter-accordion-icon {
+  color: var(--color-warm-gray-light);
+  transition: transform var(--transition-normal);
+}
+
+.filter-accordion-icon.open {
+  transform: rotate(180deg);
+  color: var(--color-cognac);
+}
+
+.filter-accordion-body {
+  padding-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Checkbox Option Row */
+.filter-checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  user-select: none;
+}
+
+.filter-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-charcoal);
+  text-transform: capitalize;
+  transition: color var(--transition-fast);
+}
+
+.filter-checkbox-row:hover .filter-checkbox-label {
+  color: var(--color-cognac);
+}
+
+.filter-checkbox-input {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-default);
+  accent-color: var(--color-cognac);
+  cursor: pointer;
+}
+
+.filter-item-count {
+  font-size: 0.7rem;
+  color: var(--color-warm-gray-light);
+}
+
+/* Quick Price Presets */
+.filter-price-presets {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.filter-price-preset-btn {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background-color: var(--color-neutral-50);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs);
+  color: var(--color-charcoal);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.filter-price-preset-btn:hover {
+  border-color: var(--color-cognac);
+  color: var(--color-cognac);
+  background-color: var(--color-cognac-light);
+}
+
+.filter-price-preset-btn.active {
+  background-color: var(--color-cognac);
+  border-color: var(--color-cognac);
+  color: var(--color-ivory);
+}
+
+/* Price Range Slider & Inputs */
+.price-inputs-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.price-input-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs);
+  padding: 0.35rem 0.5rem;
+  background-color: var(--color-neutral-50);
+}
+
+.price-currency-symbol {
+  font-size: var(--text-xs);
+  color: var(--color-neutral-400);
+  margin-right: 4px;
+}
+
+.price-number-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-neutral-900);
+  outline: none;
+}
+
+.price-range-slider {
+  width: 100%;
+  accent-color: var(--color-cognac);
+  cursor: pointer;
+  margin-top: var(--space-2);
+}
+
+/* Size Chips Grid */
+.size-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.size-chip-btn {
+  height: 32px;
+  background-color: var(--color-ivory-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.size-chip-btn:hover {
+  border-color: var(--color-cognac);
+  color: var(--color-cognac);
+}
+
+.size-chip-btn.active {
+  background-color: var(--color-cognac);
+  color: var(--color-ivory);
+  border-color: var(--color-cognac);
+}
+
+.size-chip-btn:focus-visible {
+  outline: 2px solid var(--color-cognac);
+  outline-offset: 1px;
+}
+
+/* Color Swatches Grid */
+.colors-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 0.2rem 0;
+}
+
+.color-filter-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.color-filter-swatch:hover {
+  transform: scale(1.12);
+}
+
+.color-filter-swatch.active {
+  outline: 2px solid var(--color-cognac);
+  outline-offset: 2px;
+}
+
+.color-filter-swatch:focus-visible {
+  outline: 2px solid var(--color-cognac);
+  outline-offset: 2px;
+}
+
+.color-swatch-check {
+  color: #fff;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6));
+}
+
+/* Pills row for fits & aesthetics */
+.filter-pills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-pill-option {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-default);
+  background-color: var(--color-ivory-surface);
+  color: var(--color-charcoal);
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill-option:hover {
+  border-color: var(--color-cognac);
+  color: var(--color-cognac);
+}
+
+.filter-pill-option.active {
+  background-color: var(--color-cognac-light);
+  color: var(--color-cognac-hover);
+  border-color: var(--color-cognac);
+  font-weight: 600;
+}

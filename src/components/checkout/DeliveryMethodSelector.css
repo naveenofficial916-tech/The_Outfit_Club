@@ -1,0 +1,130 @@
+/* DeliveryMethodSelector.css */
+
+.delivery-methods-group {
+  margin: 16px 0 24px;
+}
+
+.delivery-methods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.delivery-method-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: #ffffff;
+  border: 1.5px solid #e7e4dc;
+  border-radius: 4px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delivery-method-card:hover {
+  border-color: #b5b0a3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.delivery-method-card.is-selected {
+  border-color: #171717;
+  background-color: #faf9f7;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.method-radio-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.delivery-radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.custom-radio-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #a3a3a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  transition: all 0.15s ease;
+}
+
+.delivery-method-card.is-selected .custom-radio-mark {
+  border-color: #171717;
+  background-color: #171717;
+  color: #ffffff;
+}
+
+.method-info-col {
+  flex: 1;
+}
+
+.method-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.method-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.method-title-wrap svg {
+  color: #171717;
+}
+
+.method-name {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #171717;
+  letter-spacing: 0.02em;
+}
+
+.method-price-wrap {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.cost-free {
+  background-color: #d1fae5;
+  color: #065f46;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+}
+
+.cost-price {
+  color: #171717;
+}
+
+.method-estimate {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #8f2d14;
+  margin-bottom: 2px;
+}
+
+.method-description {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.8rem;
+  color: #666666;
+  line-height: 1.4;
+}

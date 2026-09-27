@@ -1,0 +1,276 @@
+/* OrdersPage.css — The Outfit Club Men's Fashion */
+/* MODULE 5 / TASK 5.3 — Warm Ivory / Cream Palette */
+
+.orders-page-wrapper {
+  background-color: #F5F1E8;
+  color: #171717;
+  min-height: calc(100vh - 200px);
+  padding: 40px 24px 80px;
+}
+
+.orders-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Toast */
+.orders-toast {
+  position: fixed;
+  top: 90px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #171717;
+  color: #FBF9F4;
+  padding: 12px 18px;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(23, 23, 23, 0.18);
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.88rem;
+  animation: slideInToast 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.orders-toast svg {
+  color: #10b981;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: #DDD6CA;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+}
+
+@keyframes slideInToast {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Breadcrumbs */
+.orders-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6F6961;
+  margin-bottom: 24px;
+}
+
+.breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: #6F6961;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #A66A45;
+}
+
+.breadcrumb-separator {
+  color: #DDD6CA;
+}
+
+.breadcrumb-current {
+  color: #171717;
+  font-weight: 700;
+}
+
+.orders-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #171717;
+}
+
+.orders-title {
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #171717;
+  margin: 0 0 6px;
+}
+
+.orders-subtitle {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.92rem;
+  color: #6F6961;
+  margin: 0;
+  max-width: 600px;
+}
+
+.orders-count-badge {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #6F6961;
+}
+
+/* Filter bar */
+.orders-filter-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+.filter-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FBF9F4;
+  border: 1px solid #DDD6CA;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6F6961;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.filter-tab-btn:hover {
+  border-color: #A66A45;
+  color: #A66A45;
+}
+
+.filter-tab-btn.is-active {
+  background-color: #171717;
+  border-color: #171717;
+  color: #FBF9F4;
+}
+
+.filter-count {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+/* Orders List */
+.orders-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.no-filtered-orders {
+  background: #FBF9F4;
+  border: 1px solid #DDD6CA;
+  border-radius: 4px;
+  padding: 40px;
+  text-align: center;
+  color: #6F6961;
+}
+
+.btn-reset-filter {
+  margin-top: 12px;
+  background: none;
+  border: 1px solid #171717;
+  padding: 8px 16px;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #171717;
+  cursor: pointer;
+}
+
+/* Empty State / Logged-Out State */
+.orders-empty-state {
+  background-color: #FBF9F4;
+  border: 1px solid #DDD6CA;
+  border-radius: 6px;
+  padding: 72px 24px;
+  text-align: center;
+  max-width: 580px;
+  margin: 40px auto;
+  box-shadow: 0 4px 20px rgba(23, 23, 23, 0.03);
+}
+
+.empty-orders-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background-color: #F5F1E8;
+  color: #A66A45;
+  margin-bottom: 24px;
+  border: 1px solid #DDD6CA;
+}
+
+.empty-orders-title {
+  font-family: var(--font-display, 'Cinzel', serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #171717;
+  margin: 0 0 12px;
+}
+
+.empty-orders-desc {
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.95rem;
+  color: #6F6961;
+  max-width: 440px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.btn-shop-collection {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #171717;
+  color: #FBF9F4;
+  border: 1px solid #171717;
+  padding: 14px 30px;
+  font-family: var(--font-body, 'Outfit', sans-serif);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.btn-shop-collection:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .orders-page-wrapper {
+    padding: 24px 16px 60px;
+  }
+
+  .orders-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .orders-empty-state {
+    padding: 48px 16px;
+    margin: 20px auto;
+  }
+}

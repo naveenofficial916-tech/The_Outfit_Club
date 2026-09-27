@@ -1,0 +1,90 @@
+/**
+ * THE OUTFIT CLUB — MOBILE FILTER DRAWER STYLING
+ */
+
+.mobile-filter-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(12, 12, 14, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: var(--z-modal);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.mobile-filter-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-filter-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 360px;
+  max-width: 90vw;
+  background-color: var(--color-white);
+  z-index: calc(var(--z-modal) + 1);
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-dropdown);
+}
+
+.mobile-filter-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.mobile-drawer-title {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-neutral-900);
+}
+
+.mobile-drawer-close-btn {
+  background: none;
+  border: none;
+  color: var(--color-neutral-600);
+  cursor: pointer;
+  padding: var(--space-1);
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-xs);
+}
+
+.mobile-drawer-close-btn:hover {
+  color: var(--color-black);
+}
+
+.mobile-drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-5);
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-drawer-footer {
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--border-default);
+  background-color: var(--color-white);
+  display: flex;
+  gap: var(--space-2);
+}

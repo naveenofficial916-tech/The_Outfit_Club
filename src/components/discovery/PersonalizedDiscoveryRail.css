@@ -1,0 +1,39 @@
+/* ============================================================
+   THE OUTFIT CLUB — PERSONALIZED DISCOVERY RAIL STYLES
+   Visual styling and micro-interactions for session discovery
+   ============================================================ */
+
+.personalized-discovery-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.personalized-discovery-wrapper .product-rail-section {
+  margin-top: var(--space-12, 48px);
+  margin-bottom: var(--space-12, 48px);
+}
+
+/* Micro-interaction transition on clear / reset */
+.personalized-discovery-wrapper .product-rail-clear-btn {
+  color: var(--color-warm-gray, #737373);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  transition: all var(--transition-fast, 0.15s ease);
+}
+
+.personalized-discovery-wrapper .product-rail-clear-btn:hover {
+  color: var(--color-cognac, #9a6848);
+  background-color: rgba(154, 104, 72, 0.08);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .personalized-discovery-wrapper .product-rail-track {
+    scroll-behavior: auto !important;
+  }
+
+  .personalized-discovery-wrapper .rail-arrow-btn,
+  .personalized-discovery-wrapper .product-rail-clear-btn {
+    transition: none !important;
+  }
+}

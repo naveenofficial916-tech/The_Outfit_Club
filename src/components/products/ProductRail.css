@@ -1,0 +1,173 @@
+/* ============================================================
+   THE OUTFIT CLUB — PRODUCT RAIL STYLING
+   Horizontal discovery tracks with smooth touch scrolling and arrow controls
+   ============================================================ */
+
+.product-rail-section {
+  margin-top: var(--space-16, 64px);
+  margin-bottom: var(--space-16, 64px);
+  position: relative;
+  width: 100%;
+}
+
+.product-rail-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-6, 24px);
+  padding-bottom: var(--space-4, 16px);
+  border-bottom: 1px solid var(--color-border-subtle, #e5e5e0);
+  gap: var(--space-4, 16px);
+  flex-wrap: wrap;
+}
+
+.product-rail-headings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 4px);
+}
+
+.product-rail-eyebrow {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-cognac, #9a6848);
+}
+
+.product-rail-title {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal, #171717);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.product-rail-desc {
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: var(--text-sm, 0.875rem);
+  color: var(--color-text-muted, #737373);
+  margin: 0;
+}
+
+.product-rail-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4, 16px);
+}
+
+.product-rail-clear-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted, #737373);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.product-rail-clear-btn:hover {
+  color: var(--color-error, #b91c1c);
+  background-color: rgba(185, 28, 28, 0.06);
+}
+
+.product-rail-arrows {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2, 8px);
+}
+
+.rail-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-ivory, #f5f2ec);
+  border: 1px solid var(--color-border-subtle, #e5e5e0);
+  color: var(--color-charcoal, #171717);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.rail-arrow-btn:hover:not(:disabled) {
+  background-color: var(--color-charcoal, #171717);
+  color: #ffffff;
+  border-color: var(--color-charcoal, #171717);
+  transform: translateY(-1px);
+}
+
+.rail-arrow-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Horizontal Track */
+.product-rail-track {
+  display: flex;
+  gap: var(--space-5, 20px);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-4, 16px);
+  padding-top: var(--space-2, 8px);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(23, 23, 23, 0.2) transparent;
+}
+
+.product-rail-track::-webkit-scrollbar {
+  height: 4px;
+}
+
+.product-rail-track::-webkit-scrollbar-thumb {
+  background: rgba(23, 23, 23, 0.2);
+  border-radius: 2px;
+}
+
+.product-rail-item {
+  flex: 0 0 260px;
+  max-width: 280px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-rail-role-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  background: rgba(23, 23, 23, 0.85);
+  color: #ffffff;
+  font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .product-rail-item {
+    flex: 0 0 280px;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-rail-item {
+    flex: 0 0 300px;
+    max-width: 320px;
+  }
+}
